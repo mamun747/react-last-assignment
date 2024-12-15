@@ -64,3 +64,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.selected-color {
+  filter: none; /* No filter to retain original look */
+  stroke: #1677BD; /* If you're using inline SVG styling */
+  filter: invert(39%) sepia(79%) saturate(1454%) hue-rotate(193deg) brightness(93%) contrast(97%);
+}
+
+/* For text color change */
+.text-selected {
+  color: #1677BD;
+}

@@ -1,4 +1,5 @@
-import Hero from "./Hero/Hero_Area";
+import Hero from "./Hero/SelectionArea";
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
 import Trends from "./Trends/Trends";
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <>
     <Hero/>
     <Trends/>
+    <HeroCarousel/>
     </>
   )
 }
