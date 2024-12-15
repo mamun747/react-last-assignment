@@ -1,5 +1,6 @@
 import { data } from "@/Data/data";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [search, setSearch] = useState("");
@@ -37,7 +38,7 @@ function Navbar() {
           <div className="w-4 h-[1px] bg-gray-700"></div>
         </button>
             <div className="hidden lg:block">
-              <img src="/Logo.png" alt="Logo" />
+              <NavLink to="/"><img src="/Logo.png" alt="Logo" /></NavLink>
             </div>
             <div>
               <div
@@ -129,9 +130,10 @@ function Navbar() {
         </div>
       {
         open ?
-        <div className="bg-gray-50 flex flex-col w-1/2 h-[30vh] lg:hidden pt-5 ps-4 rounded-br-full">
+        <div className="bg-gray-50/95 flex flex-col w-1/2 h-[30vh] lg:hidden pt-5 ps-4 rounded-br-full absolute shadow-md">
+          <button className="absolute right-5 cursor-pointer w-6 h-6" onClick={() => setOpen(false)}><img src="/cross.png" alt="" /></button>
         <div className="w-1/2">
-            <img src="/Logo.png" alt="Logo" />
+        <NavLink to="/"><img src="/Logo.png" alt="Logo" /></NavLink>
           </div>
         <div className="flex lg:hidden flex-col items-start pt-6 gap-3">
         <img src="/lang.png" alt="Language Icon" />

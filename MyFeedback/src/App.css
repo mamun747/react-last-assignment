@@ -1,0 +1,7 @@
+.hover_svg img {
+    transition: filter 0.3s ease;
+  }
+  
+.hover_svg img:hover {
+    filter: invert(44%) sepia(96%) saturate(640%) hue-rotate(1deg) brightness(96%) contrast(95%);
+  }
