@@ -6,11 +6,11 @@ function Hero() {
 
   return (
     <section className="pt-9 px-[46px]">
-      <div className="flex justify-around items-center relative">
+      <div className="flex justify-center gap-4 lg:gap-0 lg:justify-around items-center relative flex-wrap">
         {HeroData.map((value) => (
           <div
             key={value.id}
-            className="flex flex-col items-center cursor-pointer"
+            className="flex flex-col items-center cursor-pointer relative"
             onClick={() => setSelectedId(value.id)}
           >
             <img
@@ -27,7 +27,10 @@ function Hero() {
             >
               {value.name}
             </p>
-            <div className={`${selectedId === value.id ? "border border-[#1677BD] w-[84px] h-[2px] absolute -bottom-2" : ""}`}></div>
+            {/* Fixed selected menu indicator */}
+            {selectedId === value.id && (
+              <div className="absolute bottom-[-8px] border border-[#1677BD] w-[84px] h-[2px]"></div>
+            )}
           </div>
         ))}
       </div>

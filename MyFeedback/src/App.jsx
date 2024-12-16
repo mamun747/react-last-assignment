@@ -1,7 +1,7 @@
-import Navbar from "./component/Navbar"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import Trends from "./component/Home/HeroCarousel/Trends"
 import Home from "./component/Home/Index"
-import Trends from "./component/Home/Trends/Trends"
+import Navbar from "./component/Navbar"
 
 function App() {
   return (

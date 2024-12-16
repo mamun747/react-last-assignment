@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 function HeroCarousel() {
@@ -60,41 +60,64 @@ function HeroCarousel() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(4); // Default for large screens
 
+  // Update itemsToShow based on window size
+  useEffect(() => {
+    const updateItemsToShow = () => {
+      if (window.innerWidth < 640) {
+        setItemsToShow(1); // Small devices
+      } else if (window.innerWidth < 1024) {
+        setItemsToShow(2); // Tablets
+      } else {
+        setItemsToShow(4); // Larger screens
+      }
+    };
+
+    // Call initially and add resize listener
+    updateItemsToShow();
+    window.addEventListener("resize", updateItemsToShow);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", updateItemsToShow);
+  }, []);
+
+  // Handle navigation
   const handlePrev = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? HeroCarouselData.length - 4 : prev - 1
+      prev === 0 ? HeroCarouselData.length - itemsToShow : prev - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((next) =>
-      next === HeroCarouselData.length - 4 ? 0 : next + 1
+      next === HeroCarouselData.length - itemsToShow ? 0 : next + 1
     );
   };
 
+  // Determine visible items
   const visibleItems =
-    HeroCarouselData.slice(currentIndex, currentIndex + 4).length === 4
-      ? HeroCarouselData.slice(currentIndex, currentIndex + 4)
+    HeroCarouselData.slice(currentIndex, currentIndex + itemsToShow).length ===
+    itemsToShow
+      ? HeroCarouselData.slice(currentIndex, currentIndex + itemsToShow)
       : [
           ...HeroCarouselData.slice(currentIndex),
           ...HeroCarouselData.slice(
             0,
-            4 - HeroCarouselData.slice(currentIndex).length
+            itemsToShow -
+              HeroCarouselData.slice(currentIndex, currentIndex + itemsToShow)
+                .length
           ),
         ];
 
-  const handleClick = (index) => {
-    setCurrentIndex(index);
-  };
   return (
     <>
-      <section className="mx-[47px] mt-[71px]">
-        <div className="px-6 py-5 bg-[#1677BD] rounded-[9px] w-[1345px] mx-auto relative">
+      <section className="xl:mx-[47px] mt-[71px]">
+        <div className="px-6 py-5 bg-[#1677BD] rounded-[9px] lg:w-[1345px] mx-auto relative">
           <h2 className="text-[32px] font-[400] text-white">
             Find the best restaurant ratings below
           </h2>
-          <div className="pt-[31px] grid grid-cols-4 place-items-center gap-4">
+          <div className="pt-[31px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-4">
             {visibleItems.map((item) => (
               <div
                 key={item.id}
@@ -132,19 +155,19 @@ function HeroCarousel() {
             </button>
           </div>
           <div className="flex justify-center items-center gap-2 mt-6">
-            {Array.from({ length: Math.ceil(HeroCarouselData.length / 4) }).map(
-              (_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full ${
-                    index === Math.floor(currentIndex / 4)
-                      ? "bg-[#D9D9D9]"
-                      : "bg-[#FFFFFF]"
-                  }`}
-                  onClick={() => setCurrentIndex(index * 4)}
-                ></button>
-              )
-            )}
+            {Array.from({
+              length: Math.ceil(HeroCarouselData.length / itemsToShow),
+            }).map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full ${
+                  index === Math.floor(currentIndex / itemsToShow)
+                    ? "bg-[#D9D9D9]"
+                    : "bg-[#FFFFFF]"
+                }`}
+                onClick={() => setCurrentIndex(index * itemsToShow)}
+              ></button>
+            ))}
           </div>
         </div>
       </section>
