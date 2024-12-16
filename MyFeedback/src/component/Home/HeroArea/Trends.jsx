@@ -25,8 +25,8 @@ function Trends() {
         }
       </div>
       <div className="flex flex-col items-center">
-        <h1 className="text-[#1E1E1E] text-[22px] font-[400]">Discover more cool restaurants</h1>
-        <button className="px-[39px] py-[12px] bg-[#1677BD] rounded-full text-white text-[19px] text-center mt-5">Show more</button>
+        <h1 className="text-[#1E1E1E] text-[22px] font-[400] text-center md:text-left">Discover more cool restaurants</h1>
+        <button className="px-6 md:px-[39px] py-2 md:py-3 bg-[#1677BD] rounded-full text-white text-base md:text-[19px] text-center mt-5">Show more</button>
       </div>
     </section>
     </>

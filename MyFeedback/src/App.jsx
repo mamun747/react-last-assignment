@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import Trends from "./component/Home/HeroCarousel/Trends"
+import Trends from "./component/Home/HeroArea/Trends"
 import Home from "./component/Home/Index"
 import Navbar from "./component/Navbar"
 

@@ -1,13 +1,9 @@
-import Hero from "./Hero/SelectionArea";
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
-import Trends from "./HeroCarousel/Trends";
+import MainSection from "./HeroArea/MainSection";
 
 function Home() {
   return (
     <>
-    <Hero/>
-    <HeroCarousel/>
-    <Trends/>
+    <MainSection/>
     </>
   )
 }
