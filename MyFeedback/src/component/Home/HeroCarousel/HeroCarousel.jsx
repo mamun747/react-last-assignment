@@ -73,13 +73,20 @@ function HeroCarousel() {
     );
   };
 
-  const visibleItems = HeroCarouselData.slice(
-    currentIndex,
-    currentIndex + 4
-  ).length === 4
-    ? HeroCarouselData.slice(currentIndex, currentIndex + 4)
-    : [...HeroCarouselData.slice(currentIndex), ...HeroCarouselData.slice(0, 4 - HeroCarouselData.slice(currentIndex).length)];
+  const visibleItems =
+    HeroCarouselData.slice(currentIndex, currentIndex + 4).length === 4
+      ? HeroCarouselData.slice(currentIndex, currentIndex + 4)
+      : [
+          ...HeroCarouselData.slice(currentIndex),
+          ...HeroCarouselData.slice(
+            0,
+            4 - HeroCarouselData.slice(currentIndex).length
+          ),
+        ];
 
+  const handleClick = (index) => {
+    setCurrentIndex(index);
+  };
   return (
     <>
       <section className="mx-[47px] mt-[71px]">
@@ -123,6 +130,21 @@ function HeroCarousel() {
             >
               <GoArrowRight className="w-[27px] h-[27px]" />
             </button>
+          </div>
+          <div className="flex justify-center items-center gap-2 mt-6">
+            {Array.from({ length: Math.ceil(HeroCarouselData.length / 4) }).map(
+              (_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full ${
+                    index === Math.floor(currentIndex / 4)
+                      ? "bg-[#D9D9D9]"
+                      : "bg-[#FFFFFF]"
+                  }`}
+                  onClick={() => setCurrentIndex(index * 4)}
+                ></button>
+              )
+            )}
           </div>
         </div>
       </section>
