@@ -409,7 +409,6 @@ export const detailsData = [
         des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout."
     },
 ];
-
 export const discoverData = [
     {
         img: "/img35.png",
