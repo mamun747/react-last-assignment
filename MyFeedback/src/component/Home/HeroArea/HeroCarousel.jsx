@@ -69,8 +69,10 @@ function HeroCarousel() {
         setItemsToShow(1); // Small devices
       } else if (window.innerWidth < 1024) {
         setItemsToShow(2); // Tablets
-      } else {
-        setItemsToShow(4); // Larger screens
+      } else if (window.innerWidth < 1440) {
+        setItemsToShow(3); // Larger screens
+      }else{
+        setItemsToShow(4)
       }
     };
 
@@ -113,7 +115,7 @@ function HeroCarousel() {
   return (
     <>
       <section className="xl:mx-[47px] mt-[71px]">
-        <div className="px-6 py-5 bg-[#1677BD] rounded-[9px] lg:w-[1345px] mx-auto relative">
+        <div className="px-6 py-5 bg-[#1677BD] rounded-[9px] w-full xl:w-[1345px] mx-auto relative">
           <h2 className="text-[32px] font-[400] text-white">
             Find the best restaurant ratings below
           </h2>

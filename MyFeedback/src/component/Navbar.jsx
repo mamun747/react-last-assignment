@@ -130,7 +130,7 @@ function Navbar() {
         </div>
       {
         open ?
-        <div className="bg-gray-50/95 flex flex-col w-1/2 h-[30vh] lg:hidden pt-5 ps-4 rounded-br-full absolute shadow-md">
+        <div className="bg-gray-50/95 flex flex-col w-1/2 h-[30vh] lg:hidden pt-5 ps-4 rounded-br-full absolute shadow-md z-50">
           <button className="absolute right-5 cursor-pointer w-6 h-6" onClick={() => setOpen(false)}><img src="/cross.png" alt="" /></button>
         <div className="w-1/2">
         <NavLink to="/"><img src="/Logo.png" alt="Logo" /></NavLink>
