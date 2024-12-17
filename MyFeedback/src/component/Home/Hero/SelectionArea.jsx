@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HeroData } from "@/Data/data";
+import Trends from "../HeroArea/Trends";
 
 function Hero() {
   const [selectedId, setSelectedId] = useState(null);
@@ -34,6 +35,11 @@ function Hero() {
           </div>
         ))}
       </div>
+
+      {/* Conditional Rendering of Trends Section */}
+      {HeroData.find((item) => item.id === selectedId && item.toggle) && (
+        <Trends />
+      )}
     </section>
   );
 }

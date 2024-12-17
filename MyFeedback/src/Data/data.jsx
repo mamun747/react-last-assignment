@@ -5,6 +5,13 @@ export const data = [
     {name: "Kikune, Dakar plateau", id: 4}
 ];
 
+export const country = [
+    { id: 1, name: "Singapore" },
+    { id: 2, name: "Malaysia" },
+    { id: 3, name: "Indonesia" },
+    { id: 4, name: "Thailand" },
+  ];
+
 export const HeroData = [
     {
         id: 1,
@@ -14,7 +21,8 @@ export const HeroData = [
     {
         id: 2,
         name: "Restaurants",
-        img: "/spoon.svg"
+        img: "/spoon.svg",
+        toggle: "yes"
     },
     {
         id: 3,
