@@ -13,7 +13,7 @@ function Navbar() {
   // Function to handle navigation
   const handleNavigate = () => {
     if (search.toLowerCase() === "kakune restaurant" && location.toLowerCase() === "singapore") {
-      navigate("/trends");
+      navigate("/result");
     }
   };
 

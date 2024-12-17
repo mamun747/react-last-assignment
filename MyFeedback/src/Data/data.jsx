@@ -258,4 +258,70 @@ export const ActivitiesData = [
         img3: "/img23.png",
         discover: "Descover"
     }
-]
+];
+
+export const resultData = [
+    {
+        id: 1,
+        img: "/img27.png",
+        name: "The snug",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating4.5.png",
+        rating: "4.5",
+        reviews: "(654 reviews)"
+    },
+    {
+        id: 2,
+        img: "/img28.png",
+        name: "Bottega",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "starFullGroup.png",
+        rating: "5.0",
+        reviews: "(1654 reviews)"
+    },
+    {
+        id: 3,
+        img: "/img29.png",
+        name: "Little Shucker",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating3.png",
+        rating: "3.0",
+        reviews: "(553 reviews)"
+    },
+    {
+        id: 4,
+        img: "/img30.png",
+        name: "Lokma",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating4.5.png",
+        rating: "4.5",
+        reviews: "(654 reviews)"
+    },
+    {
+        id: 5,
+        img: "/img31.png",
+        name: "Starbelly",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating4.5.png",
+        rating: "4.5",
+        reviews: "(654 reviews)"
+    },
+    {
+        id: 6,
+        img: "/img32.png",
+        name: "The melt",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating4.5.png",
+        rating: "4.5",
+        reviews: "(654 reviews)"
+    },
+    {
+        id: 7,
+        img: "/img33.png",
+        name: "Arabia Nights",
+        des: "The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.",
+        ratingImg: "rating4.5.png",
+        rating: "4.5",
+        reviews: "(654 reviews)"
+    },
+];
