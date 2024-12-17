@@ -55,7 +55,7 @@ function Footer() {
         <>
             <nav className="mt-[90px] overflow-y-hidden border">
                 <div>
-                <div className="flex gap-10 md:gap-[200px] justify-center pt-[26px] pb-[66px] flex-wrap">
+                <div className="flex gap-10 lg:gap-[200px] justify-center pt-[26px] pb-[66px] flex-wrap">
                     {NavItems.map((value, i) => (
                         <div key={i}>
                             <MenuSection title={value.title} menus={value.menus} />
@@ -85,7 +85,7 @@ function Footer() {
                             )}
                             </div>
                         </div>
-                        <div className="pt-5 md:pt-[30px]">
+                        <div className="pt-5 lg:pt-[30px]">
                             <h1 className="text-[#1E1E1E] text-xl font-extrabold">Countries</h1>
                             <div className="pt-3">
                                 <div onClick={() => setIsOpen2(!isOpen2)} className="cursor-pointer text-[#5E5E5E] flex items-center gap-1 ">
